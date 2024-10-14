@@ -65,6 +65,14 @@ public class CreateAccountTests extends TestBase {
          * If one or more assertions fail, assertAll() will throw an exception and the test will be marked as failed
          */
     }
+    @AfterMethod
+    public void postCondition(){
+        try {
+            app.getUserHelper().logout();
+        } catch (Exception e) {
+            // throw new RuntimeException(e);
+        }
+    }
 
 }
 
